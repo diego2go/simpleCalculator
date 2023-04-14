@@ -18,3 +18,11 @@ let firstNum = 0; //for initial testing. to be set document.querySelector('.firs
 let operator = '+' ; //for initial testing. to be set document.querySelector('.operator')
 let secondNum = 0; //for initial testing. to be set document.querySelector('.secondNum')
 
+function operate (operator, a, b) {
+    return (operator === '+') ? add(a, b) : 
+    (operator === '-') ? subtract(a, b) : 
+    (operator === '*') ? multiply(a, b) :
+    (operator === '/') ? divide(a, b) : 0;
+    // Same as 
+    // if (operator === '+') return add(a, b); // for each op...
+}
