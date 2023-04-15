@@ -28,7 +28,7 @@ body{
     text-align: right;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .result{
@@ -51,7 +51,7 @@ body{
     background-color: #efedee;
     color: #a2a6aa;
     border-radius: 10px;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     box-shadow: 1px 1px 6px  gray;
 }
 
