@@ -32,9 +32,9 @@ body{
 }
 
 .result{
-    font-size: 2.25rem;
+    font-size: 4rem;
     color: #253441;
-    margin-top: 0;
+    margin: 0;
 }
 
 .current {
