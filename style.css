@@ -67,3 +67,12 @@ body{
 .accent-text {
     color: #EC803A;
 }
+footer{
+    color: #ebebeb;
+    text-align: center;
+}
+
+.footer__link{
+    text-decoration: none;
+    color: #ebebeb;
+}
