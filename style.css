@@ -5,6 +5,8 @@
 body{
     margin: 0;
     background-color: #313742;
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.25rem;
 }
 
 .container{
