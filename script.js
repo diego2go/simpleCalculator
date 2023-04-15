@@ -33,10 +33,10 @@ const currentSelDisplay = document.querySelector('.current');
 let displayValue = 0;
 
 displayNum.forEach((num) => {
-    num.addEventListener('click', (e) => {
+    num.addEventListener('click', () => {
         (displayValue === 0) ? displayValue = num.textContent : 
         displayValue += num.textContent;
         currentSelDisplay.textContent = displayValue;
-        console.log(currentSelDisplay.textContent)
+        firstNum = displayValue;
     })
 })
