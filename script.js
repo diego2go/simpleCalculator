@@ -40,3 +40,11 @@ displayNum.forEach((num) => {
         firstNum = parseFloat(displayValue);
     })
 })
+
+const operatorBtns = document.querySelectorAll('.operator');
+
+operatorBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        operator = btn.textContent;
+    })
+})
