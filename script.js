@@ -37,6 +37,6 @@ displayNum.forEach((num) => {
         (displayValue === 0) ? displayValue = num.textContent : 
         displayValue += num.textContent;
         currentSelDisplay.textContent = displayValue;
-        firstNum = displayValue;
+        firstNum = parseFloat(displayValue);
     })
 })
