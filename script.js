@@ -11,7 +11,7 @@ function multiply (a,b) {
 }
 
 function divide (a,b) {
-    return a / b;
+    return (b === 0) ? "nope!" :a / b;
 }
 
 let firstNum = 0;
