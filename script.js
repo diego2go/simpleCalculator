@@ -37,7 +37,7 @@ displayNum.forEach((num) => {
         (displayValue === 0) ? displayValue = num.textContent : 
         displayValue += num.textContent;
         currentSelDisplay.textContent = displayValue;
-        firstNum = parseFloat(displayValue);
+        // firstNum = parseFloat(displayValue);
     })
 })
 
@@ -45,7 +45,28 @@ const operatorBtns = document.querySelectorAll('.operator');
 
 operatorBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
+        firstNum = parseFloat(displayValue);
+        displayValue = 0; //reset displayValue to prepare for secondNum
         operator = btn.textContent;
-        currentSelDisplay.textContent += ' ' + operator;
+        currentSelDisplay.textContent = firstNum + ' ' + operator;
     })
+})
+
+const equalSign = document.querySelector('.equal-sign');
+const result = document.querySelector('.result')
+
+equalSign.addEventListener('click', () => {
+    secondNum = parseFloat(displayValue);
+    let total = operate(operator, firstNum, secondNum);
+    firstNum = total;
+    result.textContent = total;
+})
+
+const acButton = document.querySelector('.ac');
+acButton.addEventListener('click', () => {
+    firstNum = 0;
+    secondNum = 0;
+    displayValue = 0;
+    currentSelDisplay.textContent = 0;
+    result.textContent = 0;
 })
