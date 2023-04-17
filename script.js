@@ -14,9 +14,9 @@ function divide (a,b) {
     return a / b;
 }
 
-let firstNum = 0; //for initial testing. to be set document.querySelector('.firstNum')
-let operator = '+' ; //for initial testing. to be set document.querySelector('.operator')
-let secondNum = 0; //for initial testing. to be set document.querySelector('.secondNum')
+let firstNum = 0;
+let operator = '+' ;
+let secondNum = 0; 
 
 function operate (operator, a, b) {
     return (operator === '+') ? add(a, b) : 
@@ -37,7 +37,6 @@ displayNum.forEach((num) => {
         (displayValue === 0) ? displayValue = num.textContent : 
         displayValue += num.textContent;
         currentSelDisplay.textContent = displayValue;
-        // firstNum = parseFloat(displayValue);
     })
 })
 
