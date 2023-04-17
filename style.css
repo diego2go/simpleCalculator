@@ -22,7 +22,7 @@ body{
     padding: 2em 1em;
     margin: auto;
     display: grid;
-    grid-template-rows: repeat(5, minmax(30px, auto));
+    grid-template-rows: repeat(6, minmax(30px, auto));
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 }
