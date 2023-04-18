@@ -56,7 +56,7 @@ const result = document.querySelector('.result')
 
 equalSign.addEventListener('click', () => {
     secondNum = parseFloat(displayValue);
-    let total = operate(operator, firstNum, secondNum);
+    let total = Math.round((operate(operator, firstNum, secondNum)*1000))/1000;
     firstNum = total;
     result.textContent = total;
 })
