@@ -69,3 +69,52 @@ acButton.addEventListener('click', () => {
     currentSelDisplay.textContent = 0;
     result.textContent = 0;
 })
+
+const numPad = document.querySelectorAll('.number');
+
+window.addEventListener('keypress', (e) => {
+    e.preventDefault();
+    switch (e.key) {
+        case 'Enter' : equalSign.click();
+        break;
+        case '/' : operatorBtns[0].click();
+        break;
+        case '*' : operatorBtns[1].click();
+        break;
+        case '-' : operatorBtns[2].click();
+        break;
+        case '+' : operatorBtns[3].click();
+        break;
+        case '1': numPad[6].click();
+        break;
+        case '2': numPad[7].click();
+        break;
+        case '3': numPad[8].click();
+        break;
+        case '4': numPad[3].click();
+        break;
+        case '5': numPad[4].click();
+        break;
+        case '6': numPad[5].click();
+        break;
+        case '7': numPad[0].click();
+        break;
+        case '8': numPad[1].click();
+        break;
+        case '9': numPad[2].click();
+        break;
+        case '0': numPad[9].click();
+        break;
+        case '.': numPad[10].click();
+        break;
+        default: return;
+        break;
+    }
+})
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace') {
+        e.preventDefault();
+        acButton.click();
+    }
+})
