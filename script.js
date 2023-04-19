@@ -108,7 +108,6 @@ window.addEventListener('keypress', (e) => {
         case '.': numPad[10].click();
         break;
         default: return;
-        break;
     }
 })
 
