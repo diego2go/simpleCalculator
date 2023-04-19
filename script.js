@@ -23,8 +23,6 @@ function operate (operator, a, b) {
     (operator === '-') ? subtract(a, b) : 
     (operator === '*') ? multiply(a, b) :
     (operator === '/') ? divide(a, b) : 0;
-    // Same as 
-    // if (operator === '+') return add(a, b); // for each op...
 }
 
 const displayNum = document.querySelectorAll('.number');
