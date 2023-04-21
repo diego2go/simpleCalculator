@@ -42,11 +42,9 @@ const operatorBtns = document.querySelectorAll('.operator');
 
 operatorBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-        if (firstNum === 0) {
-            firstNum = parseFloat(displayValue);
-        }else {
-            firstNum = total;
-        }
+        (firstNum === 0) ? 
+        firstNum = parseFloat(displayValue) :
+        firstNum = total;
         displayValue = 0; //reset displayValue to prepare for secondNum
         operator = btn.textContent;
         currentSelDisplay.textContent = firstNum + ' ' + operator;
