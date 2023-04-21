@@ -65,6 +65,7 @@ equalSign.addEventListener('click', () => {
 
 const acButton = document.querySelector('.ac');
 acButton.addEventListener('click', () => {
+    total = 0;
     firstNum = 0;
     secondNum = 0;
     displayValue = 0;
