@@ -11,7 +11,7 @@ function multiply (a,b) {
 }
 
 function divide (a,b) {
-    return (b === 0) ? "nope!" :a / b;
+    return a / b;
 }
 
 let firstNum = 0;
@@ -19,10 +19,15 @@ let operator = '+' ;
 let secondNum = 0; 
 
 function operate (operator, a, b) {
-    return (operator === '+') ? add(a, b) : 
-    (operator === '-') ? subtract(a, b) : 
-    (operator === '*') ? multiply(a, b) :
-    (operator === '/') ? divide(a, b) : 0;
+    if (operator === '/' && b === 0) {
+        return 'nope!'
+    }else {
+        return Math.round(((operator === '+') ? add(a, b) : 
+        (operator === '-') ? subtract(a, b) : 
+        (operator === '*') ? multiply(a, b) :
+        (operator === '/') ? divide(a, b) : 0)*100)/100;
+    }
+   
 }
 
 const numPad = document.querySelectorAll('.number');
@@ -57,7 +62,7 @@ const result = document.querySelector('.result')
 let total = 0;
 equalSign.addEventListener('click', () => {
     secondNum = parseFloat(displayValue);
-    total = Math.round((operate(operator, firstNum, secondNum)*1000))/1000;
+    total = operate(operator, firstNum, secondNum);
     result.textContent = total;
 })
 
