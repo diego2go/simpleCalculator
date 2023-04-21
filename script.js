@@ -42,7 +42,11 @@ const operatorBtns = document.querySelectorAll('.operator');
 
 operatorBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-        firstNum = parseFloat(displayValue);
+        if (firstNum === 0) {
+            firstNum = parseFloat(displayValue);
+        }else {
+            firstNum = total;
+        }
         displayValue = 0; //reset displayValue to prepare for secondNum
         operator = btn.textContent;
         currentSelDisplay.textContent = firstNum + ' ' + operator;
@@ -52,10 +56,10 @@ operatorBtns.forEach((btn) => {
 const equalSign = document.querySelector('.equal-sign');
 const result = document.querySelector('.result')
 
+let total = 0;
 equalSign.addEventListener('click', () => {
     secondNum = parseFloat(displayValue);
-    let total = Math.round((operate(operator, firstNum, secondNum)*1000))/1000;
-    firstNum = total;
+    total = Math.round((operate(operator, firstNum, secondNum)*1000))/1000;
     result.textContent = total;
 })
 
