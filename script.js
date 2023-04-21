@@ -30,6 +30,14 @@ function operate (operator, a, b) {
    
 }
 
+function displayOperation() {
+    currentSelDisplay.textContent = displayValue;
+}
+
+function displayTotal(){
+    result.textContent = total;
+}
+
 const numPad = document.querySelectorAll('.number');
 const currentSelDisplay = document.querySelector('.current');
 
@@ -39,7 +47,7 @@ numPad.forEach((num) => {
     num.addEventListener('click', () => {
         (displayValue === 0) ? displayValue = num.textContent : 
         displayValue += num.textContent;
-        currentSelDisplay.textContent = displayValue;
+        displayOperation();
     })
 })
 
@@ -52,7 +60,7 @@ operatorBtns.forEach((btn) => {
         firstNum = total;
         displayValue = 0; //reset displayValue to prepare for secondNum
         operator = btn.textContent;
-        currentSelDisplay.textContent = firstNum + ' ' + operator;
+        currentSelDisplay.textContent += ' ' + operator;
     })
 })
 
@@ -63,7 +71,7 @@ let total = 0;
 equalSign.addEventListener('click', () => {
     secondNum = parseFloat(displayValue);
     total = operate(operator, firstNum, secondNum);
-    result.textContent = total;
+    displayTotal();
 })
 
 const acButton = document.querySelector('.ac');
@@ -72,8 +80,8 @@ acButton.addEventListener('click', () => {
     firstNum = 0;
     secondNum = 0;
     displayValue = 0;
-    currentSelDisplay.textContent = 0;
-    result.textContent = 0;
+    displayOperation();
+    displayTotal();
 })
 
 window.addEventListener('keypress', (e) => {
