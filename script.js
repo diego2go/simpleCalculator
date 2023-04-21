@@ -25,12 +25,12 @@ function operate (operator, a, b) {
     (operator === '/') ? divide(a, b) : 0;
 }
 
-const displayNum = document.querySelectorAll('.number');
+const numPad = document.querySelectorAll('.number');
 const currentSelDisplay = document.querySelector('.current');
 
 let displayValue = 0;
 
-displayNum.forEach((num) => {
+numPad.forEach((num) => {
     num.addEventListener('click', () => {
         (displayValue === 0) ? displayValue = num.textContent : 
         displayValue += num.textContent;
@@ -71,8 +71,6 @@ acButton.addEventListener('click', () => {
     currentSelDisplay.textContent = 0;
     result.textContent = 0;
 })
-
-const numPad = document.querySelectorAll('.number');
 
 window.addEventListener('keypress', (e) => {
     e.preventDefault();
