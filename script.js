@@ -30,8 +30,8 @@ function operate (operator, a, b) {
    
 }
 
-function displayOperation() {
-    currentSelDisplay.textContent = displayValue;
+function displayOperation(val) {
+    currentSelDisplay.textContent = val;
 }
 
 function displayTotal(){
@@ -58,7 +58,7 @@ numPad.forEach((num) => {
     num.addEventListener('click', () => {
         (displayValue === 0) ? displayValue = num.textContent : 
         displayValue += num.textContent;
-        displayOperation();
+        displayOperation(displayValue);
     })
 })
 
@@ -69,7 +69,7 @@ operatorBtns.forEach((btn) => {
         storeNum();
         displayValue = 0; //reset displayValue to prepare for secondNum
         operator = btn.textContent;
-        currentSelDisplay.textContent += ' ' + operator;
+        displayOperation(operator);
     })
 })
 
@@ -89,7 +89,7 @@ acButton.addEventListener('click', () => {
     firstNum = 0;
     secondNum = 0;
     displayValue = 0;
-    displayOperation();
+    displayOperation(0);
     displayTotal();
 })
 
