@@ -38,6 +38,17 @@ function displayTotal(){
     result.textContent = total;
 }
 
+function storeNum() {
+    if (firstNum === 0 && secondNum === 0 ){
+        firstNum = parseFloat(displayValue);
+    }else if (secondNum === 0){
+        secondNum = parseFloat(displayValue);
+    }else if(total !== 0){
+        firstNum = total;
+        secondNum = 0;
+    }
+}
+
 const numPad = document.querySelectorAll('.number');
 const currentSelDisplay = document.querySelector('.current');
 
@@ -55,9 +66,7 @@ const operatorBtns = document.querySelectorAll('.operator');
 
 operatorBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-        (firstNum === 0) ? 
-        firstNum = parseFloat(displayValue) :
-        firstNum = total;
+        storeNum();
         displayValue = 0; //reset displayValue to prepare for secondNum
         operator = btn.textContent;
         currentSelDisplay.textContent += ' ' + operator;
@@ -69,7 +78,7 @@ const result = document.querySelector('.result')
 
 let total = 0;
 equalSign.addEventListener('click', () => {
-    secondNum = parseFloat(displayValue);
+    storeNum();
     total = operate(operator, firstNum, secondNum);
     displayTotal();
 })
