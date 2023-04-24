@@ -76,6 +76,7 @@ const operatorBtns = document.querySelectorAll('.operator');
 
 operatorBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
+        dot.disabled = false;
         storeNum();
         displayValue = 0; //reset displayValue to prepare for secondNum
         evaluateOperation();
@@ -112,6 +113,14 @@ function percentMultiply() {
     displayValue = displayValue / 100;
     displayOperation(displayValue);
 }
+
+const dot = numPad[10];
+
+dot.addEventListener('click', () => {
+    if (displayValue.includes(".")) {
+        dot.disabled = true;
+    }
+})
 
 window.addEventListener('keypress', (e) => {
     e.preventDefault();
