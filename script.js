@@ -52,6 +52,7 @@ function storeNum() {
 function evaluateOperation() {
     if (firstNum && secondNum) {
         total = operate(operator, firstNum, secondNum);
+        displayTotal();
         firstNum = total;
         total = 0;
         secondNum = 0;
