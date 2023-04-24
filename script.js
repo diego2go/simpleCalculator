@@ -32,6 +32,8 @@ function operate (operator, a, b) {
 
 function displayOperation(val) {
     currentSelDisplay.textContent = val;
+    // operationRecord = currentSelDisplay.textContent;
+    // console.log(operationRecord);
 }
 
 function displayTotal(){
@@ -45,6 +47,15 @@ function storeNum() {
         secondNum = parseFloat(displayValue);
     }else if(total !== 0){
         firstNum = total;
+        secondNum = 0;
+    }
+}
+
+function evaluateOperation() {
+    if (firstNum && secondNum) {
+        total = operate(operator, firstNum, secondNum);
+        firstNum = total;
+        total = 0;
         secondNum = 0;
     }
 }
@@ -69,6 +80,7 @@ operatorBtns.forEach((btn) => {
         storeNum();
         displayValue = 0; //reset displayValue to prepare for secondNum
         operator = btn.textContent;
+        evaluateOperation();
         displayOperation(operator);
     })
 })
@@ -105,7 +117,7 @@ window.addEventListener('keypress', (e) => {
         case '-' : operatorBtns[2].click();
         break;
         case '+' : operatorBtns[3].click();
-        break;
+        break; 
         case '1': numPad[6].click();
         break;
         case '2': numPad[7].click();
