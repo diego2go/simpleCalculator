@@ -122,6 +122,12 @@ dot.addEventListener('click', () => {
     }
 })
 
+const deleteButton = document.querySelector('#delete');
+
+deleteButton.addEventListener('click', () => {
+    displayValue = displayValue.slice(0, displayValue.length - 1);
+    displayOperation(displayValue);
+})
 window.addEventListener('keypress', (e) => {
     e.preventDefault();
     switch (e.key) {
