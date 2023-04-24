@@ -32,8 +32,6 @@ function operate (operator, a, b) {
 
 function displayOperation(val) {
     currentSelDisplay.textContent = val;
-    // operationRecord = currentSelDisplay.textContent;
-    // console.log(operationRecord);
 }
 
 function displayTotal(){
