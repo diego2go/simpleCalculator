@@ -79,8 +79,8 @@ operatorBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
         storeNum();
         displayValue = 0; //reset displayValue to prepare for secondNum
-        operator = btn.textContent;
         evaluateOperation();
+        operator = btn.textContent;
         displayOperation(operator);
     })
 })
