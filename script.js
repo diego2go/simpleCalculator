@@ -105,10 +105,21 @@ acButton.addEventListener('click', () => {
     displayTotal();
 })
 
+const percentButton = document.querySelector('.percent');
+
+percentButton.addEventListener('click', percentMultiply);
+
+function percentMultiply() {
+    displayValue = displayValue / 100;
+    displayOperation(displayValue);
+}
+
 window.addEventListener('keypress', (e) => {
     e.preventDefault();
     switch (e.key) {
         case 'Enter' : equalSign.click();
+        break;
+        case '%': percentButton.click();
         break;
         case '/' : operatorBtns[0].click();
         break;
